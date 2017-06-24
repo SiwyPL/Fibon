@@ -6,10 +6,12 @@ namespace Fibon.Api.Controllers {
     public class FibonacchiController : Controller {
         [HttpGet("{number}")]
         public async Task<IActionResult> Get (int number) {
+            await Task.CompletedTask;
             return Content(number.ToString());
         }
         [HttpPost("{number}")]
-        public async Task<IActionResult> Get (int number) {
+        public async Task<IActionResult> Post (int number) {
+            await Task.CompletedTask;
             return Accepted($"fibonacci/{number}", null);
         }
     }
